@@ -1,8 +1,8 @@
-# CineVerse
+# PopcornHQ
 
 A movie discovery app built with React and the TMDB API.
 
-**[Live demo →](https://movie-site-dtxe.onrender.com/)**
+**[Live demo →](https://popcornhq.vercel.app/)**
 
 ## Features
 
@@ -45,9 +45,7 @@ A movie discovery app built with React and the TMDB API.
 
 ## Deployment
 
-The `public/_redirects` file handles SPA routing on Netlify and Render.
-
-For Render or any static host, set the environment variable `VITE_TMDB_API_KEY` in the dashboard before deploying — Vite bakes it into the build at compile time.
+Deployed on Vercel. Set `VITE_TMDB_API_KEY` in **Settings → Environment Variables** before deploying — Vite bakes it into the build at compile time. Vercel handles SPA routing automatically.
 
 | Command | |
 |---|---|

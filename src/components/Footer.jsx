@@ -6,9 +6,23 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-          <h3>CineVerse</h3>
+          <div className="footer-brand-logo">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="9" r="4" fill="#f5f0e8"/>
+              <circle cx="16" cy="7" r="4.5" fill="#fff"/>
+              <circle cx="22" cy="9" r="4" fill="#f5f0e8"/>
+              <circle cx="7"  cy="12" r="3" fill="#f5f0e8"/>
+              <circle cx="25" cy="12" r="3" fill="#f5f0e8"/>
+              <path d="M7 14 L9 28 H23 L25 14 Z" fill="#e50914"/>
+              <path d="M7 14 L9 28 H14 L12 14 Z" fill="#c0070f" opacity="0.5"/>
+              <path d="M20 14 L23 28 H19 L17 14 Z" fill="#c0070f" opacity="0.3"/>
+              <rect x="6" y="13" width="20" height="3" rx="1.5" fill="#b20710"/>
+            </svg>
+            <h3>PopcornHQ</h3>
+          </div>
           <p>Discover movies you'll actually want to watch.</p>
         </div>
+
 
         <div className="footer-links">
           <div className="footer-section">
@@ -47,7 +61,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 CineVerse</p>
+        <p>© 2026 PopcornHQ</p>
         <p className="footer-credit">
           Data by <a href="https://www.themoviedb.org" target="_blank" rel="noopener noreferrer">TMDB</a>
         </p>

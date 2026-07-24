@@ -14,11 +14,18 @@ function NavBar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
-          <svg className="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="M8 4v16M16 4v16M2 9h4M18 9h4M2 15h4M18 15h4" />
+          <svg className="brand-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="9" r="4" fill="#f5f0e8"/>
+            <circle cx="16" cy="7" r="4.5" fill="#fff"/>
+            <circle cx="22" cy="9" r="4" fill="#f5f0e8"/>
+            <circle cx="7"  cy="12" r="3" fill="#f5f0e8"/>
+            <circle cx="25" cy="12" r="3" fill="#f5f0e8"/>
+            <path d="M7 14 L9 28 H23 L25 14 Z" fill="#e50914"/>
+            <path d="M7 14 L9 28 H14 L12 14 Z" fill="#c0070f" opacity="0.5"/>
+            <path d="M20 14 L23 28 H19 L17 14 Z" fill="#c0070f" opacity="0.3"/>
+            <rect x="6" y="13" width="20" height="3" rx="1.5" fill="#b20710"/>
           </svg>
-          <span className="brand-text">CineVerse</span>
+          <span className="brand-text">PopcornHQ</span>
         </Link>
 
         <button

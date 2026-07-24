@@ -1,11 +1,11 @@
-.favorites {
+.watchlist {
   padding: 2rem 5%;
   width: 100%;
   box-sizing: border-box;
   min-height: 60vh;
 }
 
-.favorites-header {
+.watchlist-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   gap: 1rem;
 }
 
-.favorites h2 {
+.watchlist h2 {
   font-size: 2rem;
   color: #ffffff;
   display: flex;
@@ -23,24 +23,24 @@
   margin: 0;
 }
 
-.favorites h2::before {
+.watchlist h2::before {
   content: "";
   width: 4px;
   height: 2rem;
-  background: #e50914;
+  background: #3498db;
   border-radius: 2px;
 }
 
-.favorites-count {
-  background: rgba(229, 9, 20, 0.15);
-  color: #ff6b6b;
+.watchlist-count {
+  background: rgba(52, 152, 219, 0.15);
+  color: #5dade2;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
-.favorites-empty {
+.watchlist-empty {
   text-align: center;
   padding: 6rem 2rem;
   min-height: 60vh;
@@ -50,10 +50,10 @@
   justify-content: center;
 }
 
-.empty-icon {
+.watchlist-empty .empty-icon {
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, rgba(229, 9, 20, 0.1) 0%, rgba(229, 9, 20, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0.05) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -63,33 +63,30 @@
 }
 
 @keyframes pulse-icon {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.2);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.2);
   }
-
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 30px 10px rgba(229, 9, 20, 0.1);
+    box-shadow: 0 0 30px 10px rgba(52, 152, 219, 0.1);
   }
 }
 
-.empty-icon svg {
+.watchlist-empty .empty-icon svg {
   width: 44px;
   height: 44px;
-  color: rgba(229, 9, 20, 0.5);
+  color: rgba(52, 152, 219, 0.5);
 }
 
-.favorites-empty h2 {
+.watchlist-empty h2 {
   margin-bottom: 0.75rem;
   font-size: 1.75rem;
   color: #fff;
   font-weight: 600;
 }
 
-.favorites-empty p {
+.watchlist-empty p {
   color: #888;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -97,90 +94,52 @@
   margin-bottom: 2rem;
 }
 
-.browse-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #e50914, #b20710);
-  color: white;
-  padding: 0.875rem 2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.browse-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
-  color: white;
-}
-
-/* Animation for favorites grid */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.favorites .movies-grid>* {
+.watchlist .movies-grid > * {
   animation: fadeIn 0.4s ease-out forwards;
 }
 
-.favorites .movies-grid>*:nth-child(1) {
-  animation-delay: 0.05s;
-}
+.watchlist .movies-grid > *:nth-child(1) { animation-delay: 0.05s; }
+.watchlist .movies-grid > *:nth-child(2) { animation-delay: 0.1s; }
+.watchlist .movies-grid > *:nth-child(3) { animation-delay: 0.15s; }
+.watchlist .movies-grid > *:nth-child(4) { animation-delay: 0.2s; }
+.watchlist .movies-grid > *:nth-child(5) { animation-delay: 0.25s; }
+.watchlist .movies-grid > *:nth-child(6) { animation-delay: 0.3s; }
 
-.favorites .movies-grid>*:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.favorites .movies-grid>*:nth-child(3) {
-  animation-delay: 0.15s;
-}
-
-.favorites .movies-grid>*:nth-child(4) {
-  animation-delay: 0.2s;
-}
-
-.favorites .movies-grid>*:nth-child(5) {
-  animation-delay: 0.25s;
-}
-
-.favorites .movies-grid>*:nth-child(6) {
-  animation-delay: 0.3s;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .favorites {
+  .watchlist {
     padding: 1.5rem;
   }
 
-  .favorites h2 {
+  .watchlist h2 {
     font-size: 1.5rem;
   }
 
-  .favorites-empty {
+  .watchlist-empty {
     padding: 4rem 1.5rem;
   }
 
-  .empty-icon {
+  .watchlist-empty .empty-icon {
     width: 100px;
     height: 100px;
   }
 
-  .empty-icon svg {
+  .watchlist-empty .empty-icon svg {
     width: 36px;
     height: 36px;
   }
 
-  .favorites-empty h2 {
+  .watchlist-empty h2 {
     font-size: 1.4rem;
   }
 }

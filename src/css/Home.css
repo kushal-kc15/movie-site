@@ -35,26 +35,15 @@
 
 .hero-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #e50914, #b20710);
+  background: #e50914;
   color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
-  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   margin-bottom: 1rem;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
 }
 
 .hero-title {
@@ -166,8 +155,10 @@
 .search-icon {
   position: absolute;
   left: 1rem;
-  font-size: 1rem;
-  opacity: 0.6;
+  width: 16px;
+  height: 16px;
+  color: #666;
+  flex-shrink: 0;
 }
 
 .search-input {
@@ -239,6 +230,39 @@
   color: #ff6b6b;
 }
 
+/* Genre Chips */
+.genre-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.genre-chip {
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  color: #aaa;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.genre-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.genre-chip.active {
+  background: rgba(229, 9, 20, 0.15);
+  border-color: rgba(229, 9, 20, 0.5);
+  color: #ff6b6b;
+}
+
 /* Movies Section */
 .movies-section {
   padding: 2rem 5% 4rem;
@@ -270,6 +294,34 @@
   box-sizing: border-box;
 }
 
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.load-more-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 0.875rem 3rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.load-more-btn:hover:not(:disabled) {
+  border-color: #e50914;
+  color: #e50914;
+}
+
+.load-more-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Error & No Results */
 .error-message {
   text-align: center;
@@ -288,10 +340,11 @@
 }
 
 .no-results-icon {
-  font-size: 4rem;
+  width: 48px;
+  height: 48px;
+  color: #444;
   display: block;
-  margin-bottom: 1rem;
-  opacity: 0.5;
+  margin: 0 auto 1rem;
 }
 
 .no-results p {
@@ -365,6 +418,17 @@
   }
 
   .category-tab {
+    flex-shrink: 0;
+  }
+
+  .genre-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+
+  .genre-chip {
     flex-shrink: 0;
   }
 }

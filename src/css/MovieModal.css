@@ -25,7 +25,7 @@
 }
 
 .modal-content {
-  background: #1a1a2e;
+  background: #161616;
   border-radius: 16px;
   max-width: 900px;
   width: 100%;
@@ -105,9 +105,9 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-      rgba(26, 26, 46, 0) 0%,
-      rgba(26, 26, 46, 0.8) 60%,
-      rgba(26, 26, 46, 1) 100%);
+      rgba(22, 22, 22, 0) 0%,
+      rgba(22, 22, 22, 0.8) 60%,
+      rgba(22, 22, 22, 1) 100%);
   display: flex;
   align-items: flex-end;
   padding: 2rem;
@@ -150,6 +150,59 @@
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
+}
+
+.modal-trailer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.modal-trailer iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal-trailer-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.modal-trailer-btn:hover,
+.modal-trailer-btn.active {
+  border-color: #e50914;
+  color: #e50914;
+}
+
+.modal-watchlist-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.modal-watchlist-btn:hover,
+.modal-watchlist-btn.active {
+  border-color: #3498db;
+  color: #3498db;
 }
 
 .modal-body {

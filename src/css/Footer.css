@@ -16,12 +16,11 @@
 }
 
 .footer-brand h3 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #e50914, #ff6b6b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
+  letter-spacing: -0.01em;
 }
 
 .footer-brand p {
@@ -74,21 +73,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.2s ease;
 }
 
 .social-links a:hover {
-  background: #e50914;
-  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .social-links svg {
   color: #888;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .social-links a:hover svg {

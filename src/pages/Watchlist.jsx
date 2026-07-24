@@ -1,26 +1,26 @@
-import "../css/Favorites.css";
+import "../css/Watchlist.css";
 import { Link } from "react-router-dom";
 import { useMovieContext } from "../contexts/MovieContext";
 import MovieCard from "../components/MovieCard";
 import MovieModal from "../components/MovieModal";
 import { useState } from "react";
 
-function Favorites() {
-  const { favorites } = useMovieContext();
+function Watchlist() {
+  const { watchlist } = useMovieContext();
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  if (favorites && favorites.length > 0) {
+  if (watchlist && watchlist.length > 0) {
     return (
-      <div className="favorites">
-        <div className="favorites-header">
-          <h2>Your Favorites</h2>
-          <p className="favorites-count">{favorites.length} movie{favorites.length !== 1 ? 's' : ''}</p>
+      <div className="watchlist">
+        <div className="watchlist-header">
+          <h2>Your Watchlist</h2>
+          <p className="watchlist-count">{watchlist.length} movie{watchlist.length !== 1 ? "s" : ""}</p>
         </div>
         <div className="movies-grid">
-          {favorites.map((movie) => (
-            <MovieCard 
-              movie={movie} 
-              key={movie.id} 
+          {watchlist.map((movie) => (
+            <MovieCard
+              movie={movie}
+              key={movie.id}
               onMovieClick={setSelectedMovie}
             />
           ))}
@@ -34,14 +34,14 @@ function Favorites() {
   }
 
   return (
-    <div className="favorites-empty">
+    <div className="watchlist-empty">
       <div className="empty-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25">
-          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+          <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
         </svg>
       </div>
-      <h2>No favorites yet</h2>
-      <p>Movies you favorite will show up here.</p>
+      <h2>Watchlist is empty</h2>
+      <p>Movies you save to watch later will show up here.</p>
       <Link to="/" className="browse-btn">
         Browse Movies
       </Link>
@@ -49,4 +49,4 @@ function Favorites() {
   );
 }
 
-export default Favorites;
+export default Watchlist;

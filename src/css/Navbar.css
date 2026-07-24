@@ -30,16 +30,17 @@
 }
 
 .brand-icon {
-  font-size: 1.75rem;
+  width: 22px;
+  height: 22px;
+  color: #e50914;
+  flex-shrink: 0;
 }
 
 .brand-text {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #e50914, #ff6b6b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
+  letter-spacing: -0.01em;
 }
 
 .navbar-links {
@@ -83,7 +84,9 @@
 }
 
 .nav-icon {
-  font-size: 1.1rem;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
 }
 
 .favorites-badge {

@@ -6,10 +6,16 @@ import "../css/MovieModal.css";
 function MovieModal({ movie, onClose }) {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
+  const [showTrailer, setShowTrailer] = useState(false);
+  const { isFavorite, addToFavorites, removeFromFavorites, isInWatchlist, addToWatchlist, removeFromWatchlist } = useMovieContext();
   const favorite = isFavorite(movie.id);
+  const inWatchlist = isInWatchlist(movie.id);
 
   useEffect(() => {
+    setShowTrailer(false);
+    setDetails(null);
+    setLoading(true);
+
     const fetchDetails = async () => {
       try {
         const data = await getMovieDetails(movie.id);
@@ -22,19 +28,20 @@ function MovieModal({ movie, onClose }) {
     };
     fetchDetails();
 
-    // Prevent body scroll when modal is open
     document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, [movie.id]);
 
   const handleFavoriteClick = () => {
-    if (favorite) {
-      removeFromFavorites(movie.id);
-    } else {
-      addToFavorites(movie);
-    }
+    if (favorite) removeFromFavorites(movie.id);
+    else addToFavorites(movie);
+  };
+
+  const handleWatchlistClick = () => {
+    if (inWatchlist) removeFromWatchlist(movie.id);
+    else addToWatchlist(movie);
   };
 
   const handleBackdropClick = (e) => {
@@ -52,6 +59,10 @@ function MovieModal({ movie, onClose }) {
   const genreList = movieData.genres
     ? movieData.genres.map((g) => g.name)
     : getGenreNames(movie.genre_ids);
+
+  const trailerKey = details?.videos?.results?.find(
+    (v) => v.type === "Trailer" && v.site === "YouTube"
+  )?.key;
 
   return (
     <div className="modal-backdrop" onClick={handleBackdropClick}>
@@ -101,6 +112,17 @@ function MovieModal({ movie, onClose }) {
               </div>
             </div>
 
+            {showTrailer && trailerKey && (
+              <div className="modal-trailer">
+                <iframe
+                  src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1`}
+                  title="Trailer"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              </div>
+            )}
+
             <div className="modal-body">
               <div className="modal-poster">
                 <img
@@ -138,10 +160,24 @@ function MovieModal({ movie, onClose }) {
 
                 <div className="modal-actions">
                   <button
+                    className={`modal-watchlist-btn ${inWatchlist ? "active" : ""}`}
+                    onClick={handleWatchlistClick}
+                  >
+                    {inWatchlist ? "In Watchlist" : "+ Watchlist"}
+                  </button>
+                  {trailerKey && (
+                    <button
+                      className={`modal-trailer-btn ${showTrailer ? "active" : ""}`}
+                      onClick={() => setShowTrailer((s) => !s)}
+                    >
+                      {showTrailer ? "Hide Trailer" : "Watch Trailer"}
+                    </button>
+                  )}
+                  <button
                     className={`modal-favorite-btn ${favorite ? "active" : ""}`}
                     onClick={handleFavoriteClick}
                   >
-                    {favorite ? "♥ Remove from Favorites" : "♡ Add to Favorites"}
+                    {favorite ? "Remove from Favorites" : "+ Favorites"}
                   </button>
                 </div>
               </div>

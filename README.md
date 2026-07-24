@@ -1,98 +1,60 @@
-# 🎬 CineVerse - Movie Discovery App
+# CineVerse
 
-A modern, responsive movie discovery platform built with React. Browse popular, trending, and top-rated movies powered by The Movie Database (TMDB) API.
+A movie discovery app built with React and the TMDB API.
 
-## 🌐 Live Demo
+**[Live demo →](https://movie-site-dtxe.onrender.com/)**
 
-**[View Live App →](https://movie-site-dtxe.onrender.com/)**
+## Features
 
-## ✨ Features
+- Browse popular, trending, and top-rated movies
+- Filter by genre
+- Search any movie
+- Trailer playback (YouTube embed)
+- Favorites and Watchlist — persisted to localStorage
+- Full movie details with cast
+- Load More pagination
+- Fully responsive
 
-- 🎥 **Browse Movies** - Explore popular, trending, and top-rated films
-- 🔍 **Search** - Find any movie instantly
-- ❤️ **Favorites** - Save movies to your personal watchlist (stored locally)
-- 🎭 **Movie Details** - View cast, ratings, overview, and more in a modal
-- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile
-- 🌙 **Dark Theme** - Modern, eye-friendly dark UI
+## Stack
 
-## 🛠️ Built With
+- React 18 + React Router v6
+- Vite 5
+- Plain CSS (no framework)
+- TMDB REST API
 
-- **React 18** - UI library
-- **React Router** - Client-side routing
-- **Vite** - Build tool & dev server
-- **TMDB API** - Movie data source
-- **CSS3** - Custom styling with animations
+## Local setup
 
-## 🚀 Getting Started
+1. Get a free API key at [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
 
-### Prerequisites
-
-- Node.js 18+ installed
-- TMDB API key ([Get one free](https://www.themoviedb.org/settings/api))
-
-### Installation
-
-1. Clone the repository
+2. Clone and install
    ```bash
    git clone https://github.com/kushal-kc15/movie-site.git
    cd movie-site
-   ```
-
-2. Install dependencies
-   ```bash
    npm install
    ```
 
-3. Add your TMDB API key in `src/services/api.js`
-   ```js
-   const API_KEY = "your_api_key_here";
+3. Create `.env.local`
+   ```
+   VITE_TMDB_API_KEY=your_key_here
    ```
 
-4. Start the development server
+4. Run
    ```bash
    npm run dev
    ```
 
-5. Open [http://localhost:5173](http://localhost:5173) in your browser
+## Deployment
 
-## 📁 Project Structure
+The `public/_redirects` file handles SPA routing on Netlify and Render.
 
-```
-src/
-├── components/       # Reusable UI components
-│   ├── Footer.jsx
-│   ├── Loading.jsx
-│   ├── MovieCard.jsx
-│   ├── MovieModal.jsx
-│   └── NavBar.jsx
-├── contexts/         # React Context for state management
-│   └── MovieContext.jsx
-├── css/              # Component styles
-├── pages/            # Route pages
-│   ├── Home.jsx
-│   └── Favorites.jsx
-└── services/         # API functions
-    └── api.js
-```
+For Render or any static host, set the environment variable `VITE_TMDB_API_KEY` in the dashboard before deploying — Vite bakes it into the build at compile time.
 
-## 📜 Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
-
-## 🙏 Acknowledgments
-
-- Movie data provided by [TMDB](https://www.themoviedb.org/)
-- Icons and emojis for UI elements
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+| Command | |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview build locally |
 
 ---
 
-Made with ❤️ by Kushal
+Data provided by [TMDB](https://www.themoviedb.org/).
